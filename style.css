@@ -1,0 +1,1271 @@
+
+/* =========================================
+   1. CONFIGURAÇÕES GERAIS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --verde-escuro: #123d32;
+    --verde-principal: #176b52;
+    --verde-medio: #279775;
+    --verde-menta: #b9ead5;
+    --verde-claro: #e9f7ef;
+
+    --branco: #ffffff;
+    --fundo: #f7faf8;
+    --cinza: #65736d;
+    --texto: #20352d;
+
+    --borda: #e0ebe4;
+    --sombra: 0 12px 35px rgba(18, 61, 50, 0.08);
+
+    --raio: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================
+   2. MENU DE NAVEGAÇÃO
+========================================= */
+
+.menu {
+    width: 100%;
+    min-height: 78px;
+    padding: 15px 8%;
+    background: rgba(255, 255, 255, 0.96);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    border-bottom: 1px solid var(--borda);
+    position: relative;
+    z-index: 10;
+}
+
+.menu a {
+    color: var(--cinza);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 19px;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--verde-principal);
+    background: var(--verde-claro);
+}
+
+.menu a.ativo {
+    color: white;
+    background: var(--verde-principal);
+}
+
+
+/* =========================================
+   3. ELEMENTOS GERAIS
+========================================= */
+
+.etiqueta-hero {
+    display: inline-block;
+    color: var(--verde-menta);
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    padding: 8px 15px;
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.numero-secao {
+    display: block;
+    color: var(--verde-medio);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 13px;
+}
+
+.titulo-inicio {
+    color: var(--verde-escuro);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.botao-principal,
+.botao-secundario {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 14px 25px;
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.botao-principal {
+    background: var(--verde-menta);
+    color: var(--verde-escuro);
+}
+
+.botao-principal:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.botao-secundario {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.botao-secundario:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   4. PÁGINA INICIAL
+========================================= */
+
+.hero-inicio {
+    min-height: 570px;
+    padding: 90px 10%;
+
+    background:
+        radial-gradient(circle at 80% 25%, #26785e, transparent 35%),
+        linear-gradient(125deg, #10372d, #176b52);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+
+    color: white;
+    overflow: hidden;
+}
+
+.hero-conteudo {
+    max-width: 620px;
+}
+
+.hero-inicio h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    margin: 25px 0;
+    font-weight: 800;
+}
+
+.descricao-hero {
+    max-width: 540px;
+    color: #d5e8df;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.botoes-hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.hero-visual {
+    width: 310px;
+    height: 310px;
+    flex-shrink: 0;
+
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 0 80px rgba(185,234,213,0.12);
+
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(185,234,213,0.25);
+    border-radius: 50%;
+}
+
+.hero-visual::before {
+    width: 230px;
+    height: 230px;
+}
+
+.hero-visual::after {
+    width: 155px;
+    height: 155px;
+}
+
+.orbita {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--verde-menta);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--verde-menta);
+}
+
+.orbita-um {
+    top: 35px;
+    right: 60px;
+}
+
+.orbita-dois {
+    bottom: 50px;
+    left: 35px;
+}
+
+.hero-visual span {
+    font-size: 80px;
+    z-index: 1;
+}
+
+.sobre-inicio,
+.funcoes-inicio,
+.caminho-inicio,
+.convite-inicio {
+    padding: 90px 10%;
+}
+
+.sobre-inicio {
+    background: white;
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.texto-sobre,
+.sobre-conteudo p {
+    color: var(--cinza);
+    font-size: 16px;
+}
+
+.destaque-sobre {
+    background: var(--verde-claro);
+    padding: 28px;
+    border-radius: var(--raio);
+    border-left: 5px solid var(--verde-medio);
+}
+
+.destaque-sobre p {
+    color: var(--verde-escuro);
+    font-weight: 600;
+}
+
+.funcoes-inicio {
+    text-align: center;
+}
+
+.funcoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.card-funcao {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 32px 25px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.card-funcao:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--sombra);
+}
+
+.icone-funcao {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.card-funcao h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 12px;
+}
+
+.card-funcao p {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+.caminho-inicio {
+    background: var(--verde-claro);
+    text-align: center;
+}
+
+.linha-percurso {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.etapa-percurso {
+    background: white;
+    padding: 25px 15px;
+    border-radius: var(--raio);
+    font-weight: 700;
+    color: var(--verde-escuro);
+}
+
+.seta-percurso {
+    color: var(--verde-medio);
+    font-size: 24px;
+}
+
+.observacao-percurso {
+    margin-top: 30px;
+    color: var(--cinza);
+}
+
+
+/* =========================================
+   5. PÁGINA DOS ÓRGÃOS
+========================================= */
+
+.hero-orgaos,
+.hero-digestao,
+.hero-nutrientes,
+.hero-quiz {
+    padding: 85px 10%;
+    background: linear-gradient(125deg, #10372d, #176b52);
+    color: white;
+}
+
+.hero-orgaos h1,
+.hero-digestao h1,
+.hero-nutrientes h1,
+.hero-quiz h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    margin: 22px 0;
+}
+
+.hero-orgaos p,
+.hero-digestao p,
+.hero-nutrientes p,
+.hero-quiz p {
+    color: #d5e8df;
+    max-width: 680px;
+    font-size: 16px;
+}
+
+.introducao-orgaos,
+.introducao-digestao,
+.introducao-nutrientes,
+.introducao-quiz {
+    padding: 75px 10%;
+    text-align: center;
+}
+
+.introducao-orgaos p,
+.texto-introducao-digestao,
+.texto-introducao-nutrientes,
+.introducao-quiz p {
+    max-width: 780px;
+    margin: auto;
+    color: var(--cinza);
+}
+
+.bloco-explicacao {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--verde-claro);
+    border-radius: var(--raio);
+}
+
+.icone-explicacao {
+    font-size: 30px;
+}
+
+.secao-orgaos,
+.secao-acessorios {
+    padding: 65px 10%;
+}
+
+.secao-orgaos {
+    background: white;
+}
+
+.grid-orgaos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.card-orgao {
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    padding: 25px 20px;
+    border-radius: var(--raio);
+    transition: 0.3s ease;
+}
+
+.card-orgao:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra);
+}
+
+.numero-orgao {
+    color: var(--verde-medio);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.icone-orgao {
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+.card-orgao h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+}
+
+.funcao-orgao {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+.secao-acessorios {
+    background: var(--verde-claro);
+}
+
+.curiosidade-orgaos {
+    margin: 50px 10%;
+    padding: 30px;
+    background: var(--verde-escuro);
+    color: white;
+    border-radius: var(--raio);
+}
+
+
+/* =========================================
+   6. PÁGINA DA DIGESTÃO
+========================================= */
+
+.resumo-processo {
+    margin-top: 25px;
+    padding: 18px 22px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.10);
+    color: white;
+    max-width: 650px;
+}
+
+.secao-etapas,
+.tipos-digestao,
+.secao-enzimas,
+.importancia-digestao {
+    padding: 70px 10%;
+}
+
+.secao-etapas {
+    background: white;
+}
+
+.lista-etapas-digestao {
+    max-width: 850px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.etapa-digestao {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    padding: 27px;
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    transition: 0.3s ease;
+}
+
+.etapa-digestao:hover {
+    transform: translateX(5px);
+    box-shadow: var(--sombra);
+}
+
+.numero-etapa-digestao {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 15px;
+    background: var(--verde-principal);
+    color: white;
+    font-weight: 800;
+}
+
+.conteudo-etapa-digestao h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 8px;
+}
+
+.conteudo-etapa-digestao p,
+.detalhe-etapa {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+.etiqueta-etapa {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--verde-principal);
+    background: var(--verde-claro);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.tipos-digestao {
+    background: var(--verde-claro);
+}
+
+.grid-tipos-digestao,
+.grid-enzimas-digestao {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card-tipo-digestao,
+.card-enzima-digestao {
+    background: white;
+    padding: 30px;
+    border-radius: var(--raio);
+    border: 1px solid var(--borda);
+}
+
+.simbolo-tipo-digestao,
+.letra-enzima-digestao {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.card-tipo-digestao h3,
+.card-enzima-digestao h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 12px;
+}
+
+.card-tipo-digestao p,
+.card-enzima-digestao p {
+    color: var(--cinza);
+}
+
+.exemplo-digestao,
+.alvo-enzima {
+    margin-top: 15px;
+    color: var(--verde-principal);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.secao-enzimas {
+    background: white;
+}
+
+.importancia-digestao {
+    background: var(--verde-escuro);
+    color: white;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.simbolo-importancia-digestao {
+    font-size: 50px;
+}
+
+
+/* =========================================
+   7. PÁGINA DOS NUTRIENTES
+========================================= */
+
+.destaque-nutrientes {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 15px;
+    max-width: 650px;
+}
+
+.secao-nutrientes {
+    padding: 70px 10%;
+    background: white;
+}
+
+.grid-nutrientes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.card-nutriente {
+    padding: 28px;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: var(--fundo);
+    transition: 0.3s ease;
+}
+
+.card-nutriente:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra);
+}
+
+.numero-nutriente {
+    color: var(--verde-medio);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.simbolo-nutriente {
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+.card-nutriente h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 12px;
+}
+
+.funcao-nutriente,
+.exemplos-nutriente {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+.exemplos-nutriente {
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.classificacao-nutrientes {
+    padding: 70px 10%;
+    background: var(--verde-claro);
+}
+
+.classificacao-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.card-classificacao {
+    padding: 30px;
+    background: white;
+    border-radius: var(--raio);
+}
+
+.destaque-classificacao {
+    color: var(--verde-principal);
+    font-weight: 800;
+}
+
+.etiqueta-classificacao {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 6px 13px;
+    border-radius: 20px;
+    background: var(--verde-claro);
+    color: var(--verde-principal);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.lista-classificacao {
+    padding-left: 20px;
+    color: var(--cinza);
+}
+
+.observacao-classificacao {
+    margin-top: 20px;
+    color: var(--cinza);
+}
+
+.absorcao-nutrientes {
+    padding: 70px 10%;
+    background: white;
+}
+
+.passos-absorcao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.passo-absorcao {
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    font-weight: 700;
+}
+
+.seta-absorcao {
+    color: var(--verde-medio);
+    font-size: 25px;
+}
+
+.destaque-alimentacao {
+    padding: 40px;
+    margin: 60px 10%;
+    border-radius: var(--raio);
+    background: var(--verde-escuro);
+    color: white;
+    text-align: center;
+}
+
+.icone-alimentacao {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   8. PÁGINA DO QUIZ
+========================================= */
+
+.hero-quiz {
+    text-align: center;
+}
+
+.hero-quiz p {
+    margin: auto;
+}
+
+.informacoes-quiz {
+    display: flex;
+    justify-content: center;
+    gap: 55px;
+    margin-top: 40px;
+}
+
+.informacoes-quiz div {
+    display: flex;
+    flex-direction: column;
+}
+
+.informacoes-quiz strong {
+    font-size: 28px;
+    color: var(--verde-menta);
+}
+
+.informacoes-quiz span {
+    color: #d5e8df;
+    font-size: 13px;
+}
+
+.conteudo-quiz {
+    padding: 0 10% 80px;
+}
+
+.caixa-quiz,
+.resultado-quiz {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 25px;
+    box-shadow: var(--sombra);
+}
+
+.topo-questao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    color: var(--verde-principal);
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.identificacao-quiz {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--cinza);
+}
+
+.barra-fundo {
+    width: 100%;
+    height: 9px;
+    margin: 20px 0 35px;
+    background: var(--verde-claro);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.barra-progresso {
+    width: 0%;
+    height: 100%;
+    background: var(--verde-medio);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+.caixa-quiz h2 {
+    color: var(--verde-escuro);
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.lista-alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.alternativa-quiz {
+    width: 100%;
+    text-align: left;
+    padding: 17px 20px;
+
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    background: var(--fundo);
+
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.alternativa-quiz:hover:not(:disabled) {
+    border-color: var(--verde-medio);
+    background: var(--verde-claro);
+    transform: translateX(4px);
+}
+
+.alternativa-quiz:disabled {
+    cursor: default;
+}
+
+.alternativa-quiz.correta {
+    background: #e1f7e9;
+    border-color: #48a66b;
+    color: #176b39;
+}
+
+.alternativa-quiz.errada {
+    background: #fff0ed;
+    border-color: #df7968;
+    color: #a53e30;
+}
+
+.feedback-quiz {
+    margin-top: 22px;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.feedback-correto {
+    color: #176b39;
+    background: #e1f7e9;
+}
+
+.feedback-errado {
+    color: #a53e30;
+    background: #fff0ed;
+}
+
+.botao-proxima {
+    margin-top: 25px;
+    padding: 14px 25px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: var(--verde-principal);
+    color: white;
+
+    font-weight: 800;
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.botao-proxima:hover:not(:disabled) {
+    background: var(--verde-escuro);
+    transform: translateY(-3px);
+}
+
+.botao-proxima:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.resultado-quiz {
+    text-align: center;
+}
+
+.resultado-quiz h2 {
+    color: var(--verde-escuro);
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.icone-resultado {
+    font-size: 55px;
+    color: var(--verde-medio);
+    margin-top: 20px;
+}
+
+.texto-pontuacao {
+    color: var(--cinza);
+    margin-top: 20px;
+}
+
+.pontuacao-final {
+    display: block;
+    font-size: 32px;
+    color: var(--verde-principal);
+    margin: 10px 0;
+}
+
+.mensagem-final {
+    color: var(--cinza);
+}
+
+.link-inicio {
+    display: block;
+    margin-top: 20px;
+    color: var(--verde-principal);
+    font-weight: 700;
+}
+
+.mensagem-quiz {
+    margin: 55px auto 0;
+    text-align: center;
+    color: var(--cinza);
+    max-width: 600px;
+}
+
+.mensagem-quiz span {
+    display: block;
+    font-size: 30px;
+    color: var(--verde-medio);
+}
+
+
+/* =========================================
+   9. CONVITE E RODAPÉ
+========================================= */
+
+.convite-inicio {
+    background: var(--verde-escuro);
+    color: white;
+    text-align: center;
+}
+
+.convite-inicio h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.convite-inicio p {
+    color: #d5e8df;
+    margin-bottom: 25px;
+}
+
+.rodape-site {
+    padding: 30px 10%;
+    background: #0b2922;
+    color: #b9cec3;
+    text-align: center;
+    font-size: 13px;
+}
+
+.rodape-site p + p {
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   10. ANIMAÇÕES
+========================================= */
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================================
+   11. RESPONSIVIDADE - TABLETS
+========================================= */
+
+@media (max-width: 950px) {
+
+    .hero-inicio {
+        padding: 70px 7%;
+        gap: 30px;
+    }
+
+    .hero-visual {
+        width: 230px;
+        height: 230px;
+    }
+
+    .hero-visual span {
+        font-size: 60px;
+    }
+
+    .sobre-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-orgaos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-nutrientes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .funcoes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   12. RESPONSIVIDADE - CELULARES
+========================================= */
+
+@media (max-width: 650px) {
+
+    .menu {
+        padding: 12px 5%;
+        gap: 4px;
+    }
+
+    .menu a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .hero-inicio {
+        min-height: auto;
+        padding: 65px 7%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-visual {
+        align-self: center;
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-inicio h1 {
+        font-size: 43px;
+    }
+
+    .hero-orgaos,
+    .hero-digestao,
+    .hero-nutrientes,
+    .hero-quiz {
+        padding: 65px 7%;
+    }
+
+    .hero-orgaos h1,
+    .hero-digestao h1,
+    .hero-nutrientes h1,
+    .hero-quiz h1 {
+        font-size: 39px;
+    }
+
+    .sobre-inicio,
+    .funcoes-inicio,
+    .caminho-inicio,
+    .convite-inicio,
+    .introducao-orgaos,
+    .introducao-digestao,
+    .introducao-nutrientes,
+    .introducao-quiz,
+    .secao-orgaos,
+    .secao-acessorios,
+    .secao-etapas,
+    .tipos-digestao,
+    .secao-enzimas,
+    .importancia-digestao,
+    .secao-nutrientes,
+    .classificacao-nutrientes,
+    .absorcao-nutrientes {
+        padding: 55px 7%;
+    }
+
+    .funcoes-grid,
+    .grid-orgaos,
+    .grid-nutrientes,
+    .grid-tipos-digestao,
+    .grid-enzimas-digestao,
+    .classificacao-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .linha-percurso {
+        grid-template-columns: 1fr;
+    }
+
+    .seta-percurso {
+        transform: rotate(90deg);
+    }
+
+    .etapa-digestao {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .numero-etapa-digestao {
+        width: 40px;
+        height: 40px;
+    }
+
+    .informacoes-quiz {
+        gap: 25px;
+    }
+
+    .caixa-quiz,
+    .resultado-quiz {
+        padding: 25px 18px;
+    }
+
+    .caixa-quiz h2 {
+        font-size: 20px;
+    }
+
+    .destaque-alimentacao,
+    .curiosidade-orgaos {
+        margin: 35px 7%;
+        padding: 25px;
+    }
+
+    .importancia-digestao {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .passos-absorcao {
+        flex-direction: column;
+    }
+
+    .seta-absorcao {
+        transform: rotate(90deg);
+    }
+
+    .rodape-site {
+        padding: 25px 7%;
+    }
+}
+
+
+/* =========================================
+   13. ACESSIBILIDADE
+========================================= */
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--verde-medio);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

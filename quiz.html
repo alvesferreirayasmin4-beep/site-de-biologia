@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz | Sistema Digestório</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-quiz">
+
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="orgaos.html">Órgãos</a>
+        <a href="digestao.html">A digestão</a>
+        <a href="nutrientes.html">Nutrientes</a>
+        <a class="ativo" href="quiz.html">Quiz</a>
+    </nav>
+
+
+    <!-- CABEÇALHO -->
+    <header class="hero-quiz">
+
+        <span class="etiqueta-hero">DESAFIO DO CONHECIMENTO</span>
+
+        <h1>
+            Teste seus<br>
+            <span>conhecimentos!</span>
+        </h1>
+
+        <p>
+            Você aprendeu sobre os órgãos, a digestão e os nutrientes.
+            Agora chegou a hora de colocar tudo em prática!
+        </p>
+
+        <div class="informacoes-quiz">
+            <div>
+                <strong>05</strong>
+                <span>Perguntas</span>
+            </div>
+
+            <div>
+                <strong>04</strong>
+                <span>Alternativas</span>
+            </div>
+
+            <div>
+                <strong>100%</strong>
+                <span>Interativo</span>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main class="conteudo-quiz">
+
+        <!-- INTRODUÇÃO -->
+        <section class="introducao-quiz">
+
+            <span class="numero-secao">HORA DO DESAFIO</span>
+
+            <h2>Você está preparado?</h2>
+
+            <p>
+                Leia cada pergunta com atenção e escolha a alternativa
+                que considerar correta. Ao final, você receberá sua
+                pontuação e poderá revisar seu desempenho.
+            </p>
+
+        </section>
+
+
+        <!-- ÁREA DO QUIZ -->
+        <section class="caixa-quiz" id="area-quiz">
+
+            <div class="topo-questao">
+
+                <span id="contador">Questão 1 de 5</span>
+
+                <span class="identificacao-quiz">SISTEMA DIGESTÓRIO</span>
+
+            </div>
+
+
+            <!-- BARRA DE PROGRESSO -->
+            <div class="barra-fundo">
+                <div id="progresso" class="barra-progresso"></div>
+            </div>
+
+
+            <!-- PERGUNTA -->
+            <h2 id="pergunta">Carregando pergunta...</h2>
+
+
+            <!-- ALTERNATIVAS -->
+            <div id="alternativas" class="lista-alternativas"></div>
+
+
+            <!-- FEEDBACK -->
+            <div id="feedback" class="feedback-quiz" aria-live="polite"></div>
+
+
+            <!-- BOTÃO -->
+            <button id="proxima" class="botao-proxima" disabled>
+                Próxima questão →
+            </button>
+
+        </section>
+
+
+        <!-- RESULTADO FINAL -->
+        <section id="resultado-final" class="resultado-quiz" hidden>
+
+            <span class="etiqueta-hero">DESAFIO CONCLUÍDO</span>
+
+            <div class="icone-resultado">✦</div>
+
+            <h2>Parabéns por participar!</h2>
+
+            <p class="texto-pontuacao">
+                Sua pontuação:
+            </p>
+
+            <strong id="pontuacao-final" class="pontuacao-final">
+                0 de 5 acertos!
+            </strong>
+
+            <p id="mensagem-final" class="mensagem-final"></p>
+
+            <button id="reiniciar" class="botao-proxima">
+                ↻ Refazer o quiz
+            </button>
+
+            <a href="index.html" class="link-inicio">
+                Voltar ao início
+            </a>
+
+        </section>
+
+
+        <!-- MENSAGEM FINAL -->
+        <section class="mensagem-quiz">
+
+            <span>✧</span>
+
+            <p>
+                Aprender sobre o corpo humano é também aprender
+                a cuidar melhor da nossa saúde!
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape-site">
+
+        <p>Projeto Sistema Digestório</p>
+
+        <p>
+            Colégio São Luiz - unidade 3 -
+             Bruna Prado, Isabela Miranda, Julia Santos, Talita Rodrigues e Yasmin Alves
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
